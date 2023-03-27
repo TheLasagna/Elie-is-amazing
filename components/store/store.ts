@@ -1,9 +1,8 @@
-import create from 'zustand'
-import { Config } from '../inputs/BaseInputProps'
-import configJson from '../../config/2023/config.json'
-import { createStore } from './createStore'
-import { ChangeEvent } from 'react'
 import produce from 'immer'
+import { ChangeEvent } from 'react'
+import configJson from '../../config/2023/config.json'
+import { Config } from '../inputs/BaseInputProps'
+import { createStore } from './createStore'
 
 function buildConfig(c: Config) {
   let config: Config = { ...c }
@@ -28,13 +27,9 @@ const initialState: QRScoutState = {
   showQR: false,
 }
 
-export const useQRScoutState = createStore<QRScoutState>(
-  initialState,
-  'qrScout',
-  {
-    version: 1,
-  }
-)
+export const useQRScoutState = createStore<QRScoutState>(initialState, 'qrScout', {
+  version: initialState.formData.version,
+})
 
 export function updateValue(sectionName: string, code: string, data: any) {
   useQRScoutState.setState(
@@ -89,10 +84,10 @@ export const inputSelector =
   }
 
 export function getQRCodeData(): string {
-  return useQRScoutState
-    .getState()
-    .formData.sections.map((s) => s.fields)
+  const data = useQRScoutState.getState().formData
+  return `${data.version}\t${data.sections
+    .map((s) => s.fields)
     .flat()
     .map((v) => `${v.value}`.replace(/\n/g, ' '))
-    .join('\t')
+    .join('\t')}`
 }

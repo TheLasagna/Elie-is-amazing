@@ -1,3 +1,4 @@
+import { useTheme } from 'next-themes'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
@@ -7,10 +8,8 @@ import Section from '../components/Section'
 import {
   getQRCodeData,
   resetSections,
-  uploadConfig,
   useQRScoutState,
 } from '../components/store/store'
-import { useTheme } from 'next-themes'
 
 export default function Home() {
   const formData = useQRScoutState((state) => state.formData)
@@ -62,7 +61,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen py-2 dark:bg-gray-700">
+    <div className="min-h-screen py-2 dark:bg-gray-800">
       <Head>
         <title>{formData.title}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -87,7 +86,7 @@ export default function Home() {
 
             <div className="mb-4 flex flex-col justify-center rounded bg-white py-2 shadow-md dark:bg-gray-600">
               <button
-                className="focus:shadow-outline mx-2 rounded bg-gray-700 py-6 px-6 font-bold uppercase text-white hover:bg-gray-700 focus:shadow-lg focus:outline-none disabled:bg-gray-300 dark:bg-red-rhr"
+                className="focus:shadow-outline mx-2 rounded bg-gray-700 px-6 py-6 font-bold uppercase text-white hover:bg-gray-600 focus:shadow-lg focus:outline-none disabled:cursor-not-allowed disabled:bg-gray-300 disabled:opacity-80 dark:bg-red-rhr dark:hover:bg-orange-700 dark:disabled:bg-gray-700"
                 type="button"
                 onClick={() => setShowQR(true)}
                 disabled={missingRequiredFields.length > 0}
@@ -118,14 +117,14 @@ export default function Home() {
               >
                 Copy Column Names
               </Button>
-              <Button
+              {/* <Button
                 variant={Variant.Secondary}
                 className="m-2"
                 onClick={() => downloadConfig()}
               >
                 Download Config
               </Button>
-              <label className="m-2 flex cursor-pointer flex-row justify-center rounded bg-gray-500 py-2 text-center font-bold text-white shadow-sm hover:bg-gray-600">
+              <label className="flex flex-row justify-center py-2 m-2 font-bold text-center text-white bg-gray-500 rounded shadow-sm cursor-pointer hover:bg-gray-600">
                 <span className="text-base leading-normal">Upload Config</span>
                 <input
                   type="file"
@@ -133,7 +132,7 @@ export default function Home() {
                   accept=".json"
                   onChange={(e) => uploadConfig(e)}
                 />
-              </label>
+              </label> */}
               <div className="m-2 flex flex-col justify-start bg-gray-500 p-2">
                 <div className="rounded-t pb-2 text-left font-bold text-white">
                   Theme
@@ -161,24 +160,37 @@ export default function Home() {
         </form>
       </main>
       <footer>
-        <div className="mt-8 flex h-24 flex-col items-center justify-center gap-4">
-          <Image
-            alt="Red Hawk Robotics"
-            src="/RedHawkRobotics-logo.svg"
-            width={400}
-            height={200}
-          />
-          <a
-            href="https://vercel.com/?utm_source=iraiders&utm_campaign=oss"
-            target="_blank"
-          >
+        <div className="mt-8 flex h-fit flex-col items-center justify-center gap-4">
+          <div className="flex flex-col items-center justify-center overflow-x-hidden overflow-y-visible sm:flex-row">
             <Image
-              alt="Powered by Vercel"
-              src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg"
-              width={200}
+              draggable={false}
+              className="sm:mt-5"
+              alt="Red Hawk Robotics"
+              src="/RedHawkRobotics-logo.svg"
+              width={400}
               height={200}
-            ></Image>
-          </a>
+            />
+            <Image
+              draggable={false}
+              alt="Westwood Robotics"
+              src="/westwood-robotics-logo.svg"
+              width={128}
+              height={128}
+            />
+          </div>
+          <button
+            className="focus:shadow-outline mx-2 mb-2 text-gray-600 underline-offset-2 hover:underline focus:outline-none dark:text-gray-300"
+            type="button"
+            onClick={() => {
+              localStorage.clear()
+              location.reload()
+            }}
+          >
+            Clear Everything{' '}
+            <span className="normal-case italic">
+              (Do not click unless you know what you are doing)
+            </span>
+          </button>
         </div>
       </footer>
     </div>

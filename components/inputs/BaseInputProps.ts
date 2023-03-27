@@ -1,11 +1,10 @@
-import React from 'react'
-
 export default interface BaseInputProps extends InputProps {
   section: string
   onChange: (value: any) => void
 }
 export interface Config {
   title: string
+  version: number
   page_title: string
   sections: SectionProps[]
 }
@@ -18,6 +17,7 @@ export interface SectionProps {
 
 export interface InputProps {
   title: string
+  icon?: IconTypes
   type: InputTypes
   required: boolean
   // A shorthand code for this input
@@ -38,3 +38,5 @@ export type InputTypes =
   | 'select'
   | 'counter'
   | 'image'
+
+export type IconTypes = 'cube' | 'cone'

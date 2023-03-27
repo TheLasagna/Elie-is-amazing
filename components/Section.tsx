@@ -1,4 +1,3 @@
-import React from 'react'
 import { InputProps } from './inputs/BaseInputProps'
 import ConfigurableInput from './inputs/ConfigurableInput'
 import InputCard from './inputs/InputCard'
@@ -21,10 +20,11 @@ export default function Section(props: SectionProps) {
           {props.name}
         </h2>
       </div>
-      <div className="flex flex-col justify-start gap-2">
+      <div className="flex flex-col justify-start gap-2 pb-1">
         {inputs?.map((e: InputProps) => (
           <InputCard
             title={e.title}
+            icon={e.icon}
             required={e.required}
             hasValue={
               e.value !== null && e.value !== undefined && e.value !== ''

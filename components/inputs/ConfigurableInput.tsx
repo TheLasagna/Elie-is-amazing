@@ -1,6 +1,4 @@
-import React from 'react'
 import { inputSelector, updateValue, useQRScoutState } from '../store/store'
-import BaseInputProps, { InputProps } from './BaseInputProps'
 import Checkbox from './CheckboxInput'
 import CounterInput from './CounterInput'
 import NumberInput from './NumberInput'
@@ -88,7 +86,7 @@ export default function ConfigurableInput(props: ConfigurableInputProps) {
       )
     default:
       return (
-        <div className="py-2 px-1">
+        <div className="px-1 py-2">
           <label
             htmlFor={input.title}
             className="mb-2 block text-sm font-bold text-gray-700"
