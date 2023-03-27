@@ -1,5 +1,6 @@
 {
   "$schema": "../schema.json",
+  "version": 1.2,
   "title": "QRScout",
   "page_title": "Charged Up",
   "sections": [
@@ -8,7 +9,7 @@
       "preserveDataOnReset": true,
       "fields": [
         {
-          "title": "Scouter Initials",
+          "title": "Scouter First Name",
           "type": "text",
           "required": true,
           "code": "scouter"
@@ -25,12 +26,12 @@
           "required": true,
           "code": "robot",
           "choices": {
-            "R1": "Red 1",
-            "R2": "Red 2",
-            "R3": "Red 3",
-            "B1": "Blue 1",
-            "B2": "Blue 2",
-            "B3": "Blue 3"
+            "R1": "Red Top",
+            "R2": "Red Middle",
+            "R3": "Red Bottom",
+            "B1": "Blue Top",
+            "B2": "Blue Middle",
+            "B3": "Blue Bottom"
           },
           "defaultValue": "R1"
         },
@@ -63,9 +64,9 @@
           "title": "Starting Location",
           "type": "select",
           "choices": {
-            "left": "Left",
+            "left": "Top",
             "middle": "Middle",
-            "right": "Right"
+            "right": "Bottom"
           },
           "defaultValue": "left",
           "required": false,
@@ -81,6 +82,7 @@
         {
           "code": "auc",
           "title": "Upper Cone Scored",
+          "icon": "cone",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -89,6 +91,7 @@
         {
           "code": "aucm",
           "title": "Middle Cone Scored",
+          "icon": "cone",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -97,6 +100,7 @@
         {
           "code": "amc",
           "title": "Lower Cone Scored",
+          "icon": "cone",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -105,6 +109,7 @@
         {
           "code": "amcm",
           "title": "Upper Cube Scored",
+          "icon": "cube",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -113,6 +118,7 @@
         {
           "code": "alc",
           "title": "Middle Cube Scored",
+          "icon": "cube",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -121,16 +127,10 @@
         {
           "code": "alcm",
           "title": "Lower Cube Scored",
+          "icon": "cube",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
-          "required": false
-        },
-        {
-          "code": "ac",
-          "title": "Picked up more Cube/Cone?",
-          "type": "boolean",
-          "defaultValue": false,
           "required": false
         },
         {
@@ -155,6 +155,7 @@
         {
           "code": "tu",
           "title": "Upper Cone Scored",
+          "icon": "cone",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -163,6 +164,7 @@
         {
           "code": "tm",
           "title": "Middle Cone Scored",
+          "icon": "cone",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -171,6 +173,7 @@
         {
           "code": "tf",
           "title": "Lower Cone Scored",
+          "icon": "cone",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -179,6 +182,7 @@
         {
           "code": "to",
           "title": "Upper Cube Scored",
+          "icon": "cube",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -187,6 +191,7 @@
         {
           "code": "tl",
           "title": "Middle Cube Scored",
+          "icon": "cube",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -195,6 +200,7 @@
         {
           "code": "tn",
           "title": "Lower Cube Scored",
+          "icon": "cube",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -252,6 +258,15 @@
           "type": "counter",
           "defaultValue": 0,
           "required": false
+        },
+        {
+          "code": "time",
+          "title": "Time taken to dock",
+          "type": "range",
+          "min": 0,
+          "max": 30,
+          "defaultValue": 0,
+          "required": false
         }
       ]
     },
@@ -263,9 +278,11 @@
           "title": "Driver Skill",
           "type": "select",
           "choices": {
-            "1": "Not Effective",
-            "2": "Average",
-            "3": "Very Effective",
+            "1": "⭐️",
+            "2": "⭐️⭐️",
+            "3": "⭐️⭐️⭐️",
+            "4": "⭐️⭐️⭐️⭐️",
+            "5": "⭐️⭐️⭐️⭐️⭐️",
             "x": "Not Observed"
           },
           "defaultValue": "x",
@@ -276,9 +293,11 @@
           "title": "Defense Rating",
           "type": "select",
           "choices": {
-            "1": "Not Effective",
-            "2": "Average",
-            "3": "Very Effective",
+            "1": "⭐️",
+            "2": "⭐️⭐️",
+            "3": "⭐️⭐️⭐️",
+            "4": "⭐️⭐️⭐️⭐️",
+            "5": "⭐️⭐️⭐️⭐️⭐️",
             "x": "Not Observed"
           },
           "defaultValue": "x",
