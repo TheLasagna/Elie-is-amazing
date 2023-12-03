@@ -2,7 +2,7 @@
   "$schema": "../schema.json",
   "version": 1.2,
   "title": "QRScout",
-  "page_title": "Charged Up",
+  "page_title": "Cressendo",
   "sections": [
     {
       "name": "Prematch",
@@ -74,7 +74,7 @@
         },
         {
           "code": "am",
-          "title": "Mobility?",
+          "title": "Working Auton?",
           "type": "boolean",
           "defaultValue": false,
           "required": false
