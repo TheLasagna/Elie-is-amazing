@@ -81,7 +81,7 @@
         },
         {
           "code": "auc",
-          "title": "Upper Cone Scored",
+          "title": "Amplified Speaker - Auton",
           "icon": "cone",
           "type": "counter",
           "defaultValue": 0,
@@ -90,7 +90,7 @@
         },
         {
           "code": "aucm",
-          "title": "Middle Cone Scored",
+          "title": "Speaker - Auton",
           "icon": "cone",
           "type": "counter",
           "defaultValue": 0,
@@ -99,7 +99,7 @@
         },
         {
           "code": "amc",
-          "title": "Lower Cone Scored",
+          "title": "Amp - Auton",
           "icon": "cone",
           "type": "counter",
           "defaultValue": 0,
@@ -108,7 +108,7 @@
         },
         {
           "code": "amcm",
-          "title": "Upper Cube Scored",
+          "title": "Amplified Speaker - Driver",
           "icon": "cube",
           "type": "counter",
           "defaultValue": 0,
@@ -117,7 +117,7 @@
         },
         {
           "code": "alc",
-          "title": "Middle Cube Scored",
+          "title": "Speaker - Driver",
           "icon": "cube",
           "type": "counter",
           "defaultValue": 0,
@@ -126,7 +126,7 @@
         },
         {
           "code": "alcm",
-          "title": "Lower Cube Scored",
+          "title": "Amp - Driver",
           "icon": "cube",
           "type": "counter",
           "defaultValue": 0,
@@ -135,139 +135,38 @@
         },
         {
           "code": "ad",
-          "title": "Docked",
+          "title": "On Stage",
           "type": "boolean",
           "defaultValue": false,
           "required": false
         },
         {
           "code": "ae",
-          "title": "Engaged",
+          "title": "Harmony",
           "type": "boolean",
           "defaultValue": false,
           "required": false
         }
       ]
     },
-    {
-      "name": "Teleop",
-      "fields": [
-        {
-          "code": "tu",
-          "title": "Upper Cone Scored",
-          "icon": "cone",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tm",
-          "title": "Middle Cone Scored",
-          "icon": "cone",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tf",
-          "title": "Lower Cone Scored",
-          "icon": "cone",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "to",
-          "title": "Upper Cube Scored",
-          "icon": "cube",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tl",
-          "title": "Middle Cube Scored",
-          "icon": "cube",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tn",
-          "title": "Lower Cube Scored",
-          "icon": "cube",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "cl",
-          "title": "Pick up Cube/Cone where",
-          "type": "select",
-          "choices": {
-            "SUBSTATION": "Substation",
-            "GROUND": "Ground",
-            "BOTH": "Both",
-            "X": "Not Attempted"
-          },
-          "defaultValue": "X",
-          "required": false
-        },
-        {
-          "code": "tv",
-          "title": "Links",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        }
-      ]
-    },
+   
     {
       "name": "Endgame",
       "fields": [
         {
           "code": "be",
-          "title": "Attempted before Endgame",
+          "title": "Spotlight - Ring on top",
           "type": "boolean",
           "defaultValue": false,
           "required": false
         },
         {
-          "code": "cl",
-          "title": "Charge Station",
-          "type": "select",
-          "choices": {
-            "DOCK": "Docked",
-            "DOCK ENGAGE": "Docked and Engaged",
-            "PARKED": "Parked",
-            "X": "Not Attempted"
-          },
-          "defaultValue": "X",
-          "required": false
-        },
-        {
           "code": "cn",
-          "title": "# of alliance bots docked",
+          "title": "# in Harmony",
           "type": "counter",
           "defaultValue": 0,
           "required": false
         },
-        {
-          "code": "time",
-          "title": "Time taken to dock",
-          "type": "range",
-          "min": 0,
-          "max": 30,
-          "defaultValue": 0,
-          "required": false
-        }
       ]
     },
     {
